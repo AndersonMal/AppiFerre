@@ -1,0 +1,119 @@
+@import url('tiendas.css');
+  body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    color: var(--naranjaOscuro);
+    font-weight: 100;
+  }
+  
+  .bg-custom {
+    background-color: var(--naranjaOscuro);
+  }
+  
+  .text-header h1 {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
+  .text-header hr {
+    width: 55%;
+  }
+  
+  .login-input {
+    width: 80%;
+    height: 38px;
+  }
+  
+  .btn-login {
+    color: white;
+    border-radius: 20px;
+    width: 180px;
+    height: 35px;
+    border: none;
+    background-color: var(--naranjaOscuro);
+   
+  }
+  
+  .btn-registro {
+    color: white;
+    border-radius: 20px;
+    width: 80%;
+    height: 35px;
+    border: none;
+    background-color: var(--naranjaOscuro);
+   
+  }
+  
+  a {
+    color: var(--naranjaOscuro);
+  }
+  
+  h4 {
+   
+    color: var(--naranjaOscuro);
+    margin-bottom: 0;
+  }
+
+  .aparecer img{
+    width: 100px;
+    
+  }
+  .aparecer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+   hr{
+    width: 100% !important;
+  }
+  .registrar__google{
+    display: flex;
+    border: 1px solid var(--naranjaOscuro);
+    padding: 7px 10px;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 80%;
+    justify-content: center;
+  }
+  .registrar__google svg{
+    width: 24px;
+    margin-right: 20px;
+  }
+  .error{
+    color: rgb(236, 0, 0);
+  }
+  @media (min-width:932px){
+    .aparecer{
+      display: none;
+      
+    }
+  }
+  @media (max-width: 932px) {
+    .display-none {
+      display: none !important;
+    }
+    .registrar__google{
+      margin: 0 auto;
+    }
+    .agrandar{
+      width: 80%;
+      margin: 0 auto!important;
+    }
+    .agrandar h1,.agrandar h5{
+      text-align: center;
+    }
+    .login-input{
+      width: 100%;
+    }
+    .agrandar button{
+      display: block;
+      width: 90%;
+      margin: 20px auto 20px auto!important;
+
+    }
+    
+  }
+  

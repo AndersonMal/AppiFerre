@@ -1,0 +1,317 @@
+:root {
+  --verdeClaro: #18ff00;
+  --naranjaClaro: #ff6600;
+  --naranjaOscuro: #ff3600;
+  --blanco: #fff;
+  --gray-40: #b3b9c2;
+  --gray-20: #e6ebf1;
+  --gray-10: #f7f8f9;
+  --fuentePrincipal: "Fredoka One", cursive;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--gray-10);
+  font-family: var(--fuentePrincipal);
+}
+/* =========================================================nav*/
+.contenedor {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.logoApiFerre {
+  width: 60px;
+}
+.offcanvas__logo {
+  display: flex;
+}
+.juego {
+  width: 100%;
+  color: var(--naranjaOscuro);
+}
+.btn {
+  font-weight: 500;
+  color: var(--blanco);
+  margin: 10px 0;
+}
+.btn-ingresar {
+  border: 1px solid var(--blanco);
+  transition: ease-in 0.3s;
+  font-size: 15px;
+  margin-right: 10px;
+}
+.btn-ingresar:hover {
+  background-color: var(--blanco);
+  color: var(--naranjaOscuro);
+}
+.btn-orange {
+  background-color: var(--naranjaClaro);
+}
+.btn-orange:hover {
+  color: var(--blanco);
+  background-color: #ff6600ab;
+}
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: var(--naranjaOscuro) !important;
+}
+.navbar-light .navbar-toggler {
+  color: var(--blanco);
+  border-color: var(--blanco);
+}
+.navbar-light .navbar-toggler-icon {
+  background-image: url("../img/menu.png");
+  background-size: cover;
+}
+.barra__busqueda {
+  width: 50%;
+  position: relative;
+}
+.barra__busqueda img {
+  position: absolute;
+  right: 10px;
+  top: 20%;
+}
+.barra__busqueda .busqueda__input {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: 0px 0px 12px -3px #000;
+  box-shadow: 0px 0px 12px -3px #000;
+}
+.busqueda__input:focus {
+  outline: none;
+}
+
+.nombre__logo {
+  display: inline-block;
+  color: var(--blanco);
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 30px;
+  font-family: "Fredoka One", cursive;
+}
+.secciones h5 {
+  color: var(--naranjaOscuro);
+  font-family: "Fredoka One", cursive;
+}
+
+.secciones p {
+  font-weight: 100;
+  font-family: "Fredoka One", cursive;
+  margin-left: 20px;
+  padding: 5px;
+  cursor: pointer;
+}
+.secciones p:hover {
+  background-color: var(--verdeClaro);
+}
+.carousel_fondo {
+  position: relative;
+}
+.carousel-indicators button {
+  z-index: 2 !important;
+}
+.contenidohero {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.822);
+  z-index: 1;
+}
+
+.carousel {
+  height: 500px;
+  margin-top: 80px;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+.tiendas {
+  text-align: center;
+}
+.tiendas h1 {
+  text-transform: uppercase;
+  color: var(--naranjaOscuro);
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  font-family: var(--fuentePrincipal);
+}
+.offcanvas {
+  padding-left: 20px;
+}
+.offcanvas .offcanvas-title {
+  color: var(--naranjaOscuro);
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 30px;
+  font-family: "Fredoka One", cursive;
+}
+.tiendas__grid {
+  width: 100%;
+  display: grid;
+  display: -ms-grid;
+  place-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+}
+div.tienda {
+  background-color: var(--blanco);
+  width: 100%;
+  height: 500px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 0 0 20px 0px;
+  -webkit-box-shadow: 0px 0px 11px -3px rgba(0, 0, 0, 0.74);
+  box-shadow: 0px 0px 11px -3px rgba(0, 0, 0, 0.74);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+@media (max-width: 960px) {
+  .barra__busqueda {
+  }
+}
+@media (max-width: 725px) {
+  .barra__busqueda {
+  }
+}
+
+@media (max-width: 900px) {
+  .tiendas__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .nombre__logo {
+    display: none;
+  }
+}
+@media (max-width: 634px) {
+  .tiendas__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .btn-ingresar {
+    display: none;
+  }
+  .carousel {
+    height: 200px;
+    margin-top: 80px;
+  }
+}
+@media (max-width: 510px) {
+  .tiendas__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+div.tienda__informacion {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+div.tienda .tienda__logo {
+  width: 100%;
+  height: 60%;
+  display: block;
+}
+div.tienda__entrar {
+  background-color: var(--naranjaOscuro);
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--blanco);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.tienda__ferreteria {
+  width: 30px;
+  position: absolute;
+  margin-top: 10px;
+  margin-right: 10px;
+  top: 0;
+  right: 0;
+}
+
+.tienda__datos h2 {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--naranjaOscuro);
+  font-family: var(--fuentePrincipal);
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.tienda__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.tienda__meta p {
+  margin: 0;
+}
+.tienda__datos img {
+  width: 24px;
+}
+.fondo {
+  background-color: var(--naranjaOscuro);
+  padding: 20px;
+  color: var(--blanco);
+}
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-self: center;
+  column-gap: 20px;
+}
+.footer__contenido {
+  margin-bottom: 20px;
+}
+.footer__contenido div {
+  display: flex;
+  flex-direction: column;
+}
+.footer__contenido div a {
+  display: inline;
+  font-size: 15px;
+  margin-left: 30%;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.footer__contenido h4 {
+  text-transform: uppercase;
+  color: var(--blanco);
+  text-align: center;
+  font-size: 20px;
+}
+.enlacesFooter {
+  text-decoration: none;
+  color: var(--blanco);
+
+  font-weight: 100;
+}
+@media (max-width: 660px) {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.derechosReservados {
+  margin-top: 20px;
+  text-align: center;
+}

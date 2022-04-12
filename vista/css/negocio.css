@@ -1,0 +1,39 @@
+.row{
+    margin-top: 86px;
+}
+nav{
+    -webkit-box-shadow: 0px 7px 4px -4px rgba(0,0,0,0.72); 
+box-shadow: 0px 7px 4px -4px rgba(0,0,0,0.72);
+}
+.width {
+    width: 80%;
+    margin-top: 20px;
+}
+.user{
+    width: 64px;
+}
+.usuarios__nombre p{
+    margin: 0;
+    margin-left: 20px;
+    padding: 0;
+    background-color: transparent !important;
+}
+.secciones-user{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.secciones p{
+    color: #000;
+}
+.secciones-usuario p{
+    margin: 0;
+    color: #000;
+}
+.secciones-usuario{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
