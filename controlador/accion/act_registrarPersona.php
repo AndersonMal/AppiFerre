@@ -7,9 +7,9 @@ require_once(__DIR__."/../../modelo/entidad/Persona.php");
     $apellido = $_POST['apellido'];
     $correo = $_POST['correo'];
     $password = $_POST['password'];
-    // $fecharegistro=
+    $passwordhash = password_hash($password,PASSWORD_DEFAULT);
 
-    $persona=new Persona(NULL, $nombre, $apellido, $correo, $password, NULL,NULL);
+    $persona=new Persona(NULL, $nombre, $apellido, $correo, $passwordhash, NULL,NULL);
 
     $user=registrarPersona($persona);
     echo($user);
