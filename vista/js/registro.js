@@ -38,5 +38,30 @@ $('#registrarse').click(function(){
 });
 
 function registrarCliente(nombre,apellido,correo,password){
-    alert('cliente registrado');
+    let datos= 'nombre='+nombre+'&apellido='+apellido+'&correo='+correo+'&password='+password;
+    $.ajax({
+
+        data: datos,
+        type: 'POST',
+        url: '../../controlador/accion/act_registrarPersona.php',
+        success: function(data){
+            if(data == -1){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Este email ya ha sido registrado',
+                })
+                return;
+            } 
+            if(data!=0){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Excelente...',
+                    text: 'Cuenta registrada existosamente',
+                })
+            
+            }
+        }
+    });
+
 }
