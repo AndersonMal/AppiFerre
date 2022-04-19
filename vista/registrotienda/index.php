@@ -1,3 +1,6 @@
+<?php session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -23,27 +26,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/tiendas.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css" />
+
+    <link rel="stylesheet" href="../css/tiendas.css" />
 </head>
 
 <body class="body">
     <header class="">
         <nav class="navbar navbar-light bg-light fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
-                    <img class="logoApiFerre" src="img/LogoWhite.svg" alt="" />
+                <a class="navbar-brand" href="index.php">
+                    <img class="logoApiFerre" src="../img/LogoWhite.svg" alt="" />
                     <h3 class="nombre__logo">Appiferre</h3>
                 </a>
 
                 <div class="barra__busqueda">
                     <input class="busqueda__input" type="text" placeholder="Busca tus tiendas" />
-                    <img src="img/buscar.png" alt="buscar" />
+                    <img src="../img/buscar.png" alt="buscar" />
                 </div>
 
                 <div>
-                    <button onclick="window.location.href='login/login.html'" class="btn btn-ingresar">
-                        INGRESAR
-                    </button>
+                    
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                         <span class="navbar-toggler-icon"></span>
@@ -52,48 +55,9 @@
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <div class="offcanvas__logo">
-                            <img class="logoApiFerre" src="img/LogoColor.png" alt="logoApiferre" />
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                                AppiFerre
-                            </h5>
-                        </div>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <hr />
-                        <div>
-                            <button onclick="window.location.href='login/login.html'" class="btn btn-success">
-                                INGRESO
-                            </button>
-                            <button onclick="window.location.href='registro/registro.php'" class="btn btn-orange">
-                                REGISTRATE
-                            </button>
-                        </div>
-                        <hr />
-
-                        <section class="secciones">
-                            <h5>SECCIONES</h5>
-                            <p>ferreterias</p>
-                            <p>Tiendas Agro</p>
-                        </section>
-                        <hr />
-                        <section class="secciones">
-                            <h5>OTROS</h5>
-                            <p onclick="window.location.href='registrotienda/registrarNegocio.html'">
-                                Registra tu negocio
-                            </p>
-                            <p>Acerca de</p>
-                            <p>
-                                <a class="juego" target="_blank" href="https://picasyfijas.netlify.app/">Diviertete con
-                                    picas y fijas</a>
-                            </p>
-                        </section>
-
-                        <hr />
-                    </div>
+                    <?php if($_SESSION['NOMBRE_USUARIO']) include('../recursos/menuLogin.php');
+                
+                    else include('../recursos/menuLogut.php');?>
                 </div>
             </div>
         </nav>
@@ -138,28 +102,106 @@
         <section class="tiendas tiendas--ferreterias">
             <h1>ferreterias</h1>
 
-            <div id="ferreterias" class="tiendas__grid">
-                <div class="tienda">
-                    <img class="tienda__logo" src="img/Banner.jpg" alt="tienda logo" />
-
-                    <div class="tienda__informacion">
-                        <div class="tienda__datos">
-                            <h2 class="tienda__nombre">A tu mano</h2>
-                            <div class="tienda__meta">
-                                <img src="img/star.png" alt="Calificacion" />
-                                <p>35 min</p>
-                            </div>
+            <div class="carouselTienda">
+                <button aria-label="Anterior" class="carousel__anterior">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="centrar icon icon-tabler icon-tabler-chevron-left"
+                        width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <polyline points="15 6 9 12 15 18" />
+                    </svg>
+                </button>
+                <button aria-label="Siguiente" class="carousel__siguiente">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="centrar icon icon-tabler icon-tabler-chevron-right"
+                        width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <polyline points="9 6 15 12 9 18" />
+                    </svg>
+                </button>
+                <div class="carouselTienda__contenedor">
+                    <div id="ferreterias__carousel" class="carouselTienda__lista">
+                        <div class="carouselTienda__elemento">
+                            <img src="../img/Banner.jpg" alt="Tiendas" />
+                            <p>Tienda1</p>
+                        </div>
+                        <div class="carouselTienda__elemento">
+                            <img src="../img/Banner.jpg" alt="Tiendas" />
+                            <p>Tienda2</p>
+                        </div>
+                        <div class="carouselTienda__elemento">
+                            <img src="../img/Banner.jpg" alt="Tiendas" />
+                            <p>Tienda3</p>
+                        </div>
+                        <div class="carouselTienda__elemento">
+                            <img src="../img/Banner.jpg" alt="Tiendas" />
+                            <p>Tienda4</p>
+                        </div>
+                        <div class="carouselTienda__elemento">
+                            <img src="../img/Banner.jpg" alt="Tiendas" />
+                            <p>Tienda5</p>
+                        </div>
+                        <div class="carouselTienda__elemento">
+                            <img src="../img/Banner.jpg" alt="Tiendas" />
+                            <p>Tienda6</p>
                         </div>
                     </div>
-
-                    <div class="tienda__entrar">Entrar</div>
-
-                    <img class="tienda__ferreteria" src="img/iconMartillo.png" alt="logo martillo" />
                 </div>
+                <div role="tablist" class="carousel__indicadores"></div>
             </div>
-            <!-- fin ferreterias -->
         </section>
         <!-- Final seccion tiendas ferreterías -->
+        <hr>
+        <section class="tiendas tiendasAgro">
+            <h1>Para el Agro</h1>
+            <div class="carouselTienda">
+                <button aria-label="Anterior" class="carousel__anterior carousel__anterior-g ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="centrar icon icon-tabler icon-tabler-chevron-left"
+                        width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <polyline points="15 6 9 12 15 18" />
+                    </svg>
+                </button>
+                <button aria-label="Siguiente" class="carousel__siguiente carousel__siguiente-g">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="centrar icon icon-tabler icon-tabler-chevron-right"
+                        width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <polyline points="9 6 15 12 9 18" />
+                    </svg>
+                </button>
+                <div class="carouselTienda__contenedor">
+                    <div id="Agro__carousel" class="carouselTienda__lista carouselTienda__lista-g">
+                        <div class="carouselTienda__elemento">
+                            <img src="../img/Banner.jpg" alt="Tiendas" />
+                            <p>Tienda1</p>
+                        </div>
+                        <div class="carouselTienda__elemento">
+                            <img src="../img/Banner.jpg" alt="Tiendas" />
+                            <p>Tienda2</p>
+                        </div>
+                        <div class="carouselTienda__elemento">
+                            <img src="../img/Banner.jpg" alt="Tiendas" />
+                            <p>Tienda3</p>
+                        </div>
+                        <div class="carouselTienda__elemento">
+                            <img src="../img/Banner.jpg" alt="Tiendas" />
+                            <p>Tienda4</p>
+                        </div>
+                        <div class="carouselTienda__elemento">
+                            <img src="../img/Banner.jpg" alt="Tiendas" />
+                            <p>Tienda5</p>
+                        </div>
+                        <div class="carouselTienda__elemento">
+                            <img src="../img/Banner.jpg" alt="Tiendas" />
+                            <p>Tienda6</p>
+                        </div>
+                    </div>
+                </div>
+                <div role="tablist" class="carousel__indicadores carousel__indicadores-g"></div>
+            </div>
+        </section>
     </main>
     <footer class="fondo">
         <div class="footer">
@@ -216,7 +258,8 @@
             </a>
         </div>
     </footer>
-    <script src="js/app.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>

@@ -29,10 +29,9 @@
 <body>
 	<div class="row m-0 h-100">
         <div class="col p-0 bg-custom d-flex justify-content-center align-items-center display-none">
-            <a href="../index.html" class="w-75">
+            <a href="../index.php" class="w-75">
                 <img src="../img/LogoWhite.svg">
-            </a>
-           
+            </a>         
         </div>
         <div class="col p-0">
             <a href="../index.html" class="aparecer">
@@ -63,7 +62,7 @@
                     </div>
                 </div>
                 <h4 class="mt-3">¿Ya tienes cuenta?</h4>
-                <button class="mt-1 btn-login" onclick="window.location.href='../login/login.html'">
+                <button class="mt-1 btn-login" onclick="window.location.href='../login/login.php'">
                     <i class="fa fa-sign-in"></i> Iniciar sesión
                 </button>
                 <a class="mt-3" style="display: block;" href="#">Términos y condiciones</a>

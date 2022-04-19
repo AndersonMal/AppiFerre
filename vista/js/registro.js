@@ -38,12 +38,11 @@ $('#registrarse').click(function(){
 });
 
 function registrarCliente(nombre,apellido,correo,password){
-    let datos= 'nombre='+nombre+'&apellido='+apellido+'&correo='+correo+'&password='+password;
+    var datos='nombre='+nombre+'&apellido='+apellido+'&correo='+correo+'&password='+password;
     $.ajax({
-
-        data: datos,
-        type: 'POST',
         url: '../../controlador/accion/act_registrarPersona.php',
+        type: "POST",
+        data: datos,
         success: function(data){
             if(data == -1){
                 Swal.fire({

@@ -12,5 +12,6 @@ require_once(__DIR__."/../../modelo/entidad/Persona.php");
     $persona=new Persona(NULL, $nombre, $apellido, $correo, $passwordhash, NULL,NULL);
 
     $user=registrarPersona($persona);
+
     echo($user);
     

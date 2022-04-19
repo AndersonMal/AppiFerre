@@ -8,7 +8,7 @@ class PersonaDAO {
 
         $data_source = new DataSource();
 
-        $data_table=$data_source->ejecutarConsulta("SELECT * FROM personas WHERE correo=:correo", array(':correo'=>$persona->getCorreo()) );
+        $data_table=$data_source->ejecutarConsulta("SELECT * FROM personas WHERE correo=:correo", array( ':correo'=>$persona->getCorreo() ) );
 
         if(count($data_table)!=0){
 
@@ -32,6 +32,34 @@ class PersonaDAO {
         return $resultado;
 
 
+    }
+
+    public function autenticarPersona($correo, $password){
+        
+        $data_source = new DataSource();
+
+        $data_table= $data_source->ejecutarConsulta("SELECT * FROM personas WHERE correo =:correo",array(':correo'=>$correo));
+
+        $persona=null;
+
+        if(count($data_table)==1 && password_verify($password,$data_table[0]["password"])){
+            
+            foreach($data_table as $indice => $valor){
+
+                $persona = new Persona(
+                        
+                        $data_table[$indice]["idpersonas"],
+                        $data_table[$indice]["nombre"],
+                        $data_table[$indice]["apellido"],
+                        $data_table[$indice]["correo"],
+                        $data_table[$indice]["password"],
+                        $data_table[$indice]["imagen"],
+                        $data_table[$indice]["fecharegistro"]
+                        
+                        );
+            }
+        }
+        return $persona;
     }
 
 

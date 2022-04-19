@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!$_SESSION["NOMBRE_USUARIO"]){
+    header("Location: ../login/login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -34,7 +41,7 @@
     <header class="">
         <nav class="navbar navbar-light bg-light fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../index.html">
+                <a class="navbar-brand" href="index.php">
                     <img class="logoApiFerre" src="../img/LogoWhite.svg" alt="" />
                     <h3 class="nombre__logo">Appiferre</h3>
                 </a>
@@ -47,82 +54,14 @@
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <div class="offcanvas__logo">
-                            <img class="logoApiFerre" src="../img/LogoColor.png" alt="logoApiferre" />
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                                AppiFerre
-                            </h5>
-                        </div>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <hr />
-                        <section class="secciones secciones-user" onclick="window.location.href='#'">
-                            <img class="user" src="../img/user.png" alt="user">
-                            <div class="usuarios__nombre">
-                                <p>Bienvenido</p>
-                                <p>Usuario</p>
-                            </div>
-                        </section>
-
-                        <hr />
-
-                        <section>
-                            <div class="secciones-usuario" onclick="window.location.href='#'">
-                                <img src="../img/home.png" alt="home">
-                                <p>Home</p>
-                            </div>
-                            <div class="secciones-usuario" onclick="window.location.href='#'">
-                                <img src="../img/notificaciones.png" alt="notificaciones">
-                                <p>notificaciones</p>
-                            </div>
-                            <div class="secciones-usuario" onclick="window.location.href='#'">
-                                <img src="../img/bolsa.png" alt="Mis compras">
-                                <p>Mis compras</p>
-                            </div>
-                            <div class="secciones-usuario" onclick="window.location.href='#'">
-                                <img src="../img/favorito.png" alt="Mis favoritos">
-                                <p>Mis favoritos</p>
-                            </div>
-                            <div class="secciones-usuario" onclick="window.location.href='#'">
-                                <img src="../img/home.png" alt="home">
-                                <p>Cerrar sesión</p>
-                            </div>
-                            <div class="secciones-usuario" onclick="window.location.href='#'">
-                                <img src="../img/home.png" alt="home">
-                                <p>Home</p>
-                            </div>
-                        </section>
-                        <hr />
-                        <section class="secciones">
-                            <h5>SECCIONES</h5>
-                            <p>ferreterias</p>
-                            <p>Tiendas Agro</p>
-                        </section>
-                        <hr />
-                        <section class="secciones">
-                            <h5>OTROS</h5>
-                            <p onclick="window.location.href='registrarNegocio.html'">
-                                Registra tu negocio
-                            </p>
-                            <p>Acerca de</p>
-                            <p>
-                                <a class="juego" target="_blank" href="https://picasyfijas.netlify.app/">Diviertete con
-                                    picas y fijas</a>
-                            </p>
-                        </section>
-
-                        <hr />
-                    </div>
+                        <?php include('../recursos/menuLogin.php') ?>
                 </div>
             </div>
         </nav>
     </header>
     <div class="row w-100">
         <div class="col p-0">
-            <a href="../index.html" class="aparecer">
+            <a href="../index.php" class="aparecer">
                 <img src="../img/LogoColor.png" />
             </a>
             <div class="text-header m-5 agrandar">
@@ -172,7 +111,7 @@
             </div>
         </div>
         <div class="col p-0 bg-custom d-flex justify-content-center align-items-center display-none">
-            <a href="../index.html" class="w-75">
+            <a href="../index.php" class="w-75">
                 <img src="../img/LogoWhite.svg" />
             </a>
         </div>

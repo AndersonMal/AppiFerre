@@ -32,11 +32,10 @@
             <a href="../index.html" class="w-75">
                 <img src="../img/LogoWhite.svg">
             </a>
-           
         </div>
         <div class="col p-0">
             <div class="text-header m-5 agrandar">
-                <a href="../index.html" class="aparecer">
+                <a href="../index.php" class="aparecer">
                     <img src="../img/LogoColor.png">
                 </a>
                 <h1>Bienvenido a AppiFerre</h1>
@@ -77,6 +76,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="../js/login.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 

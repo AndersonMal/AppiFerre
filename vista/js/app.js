@@ -1,3 +1,32 @@
+window.addEventListener("load", function () {
+  mostrarTiendas();
+  new Glider(document.querySelector(".carouselTienda__lista"), {
+    slidesToShow: 6,
+    slidesToScroll: 5,
+    draggable: false,
+    dots: ".carousel__indicadores",
+    arrows: {
+      prev: ".carousel__anterior",
+      next: ".carousel__siguiente",
+    },
+  });
+
+
+
+
+  new Glider(document.querySelector(".carouselTienda__lista-g"), {
+    slidesToShow: 6,
+    slidesToScroll: 5,
+    draggable: false,
+    dots: ".carousel__indicadores-g",
+    arrows: {
+      prev: ".carousel__anterior-g",
+      next: ".carousel__siguiente-g",
+    },
+  });
+});
+
+
 $(function () {
   for (let i = 0; i < 10; i++) {
     $("#ferreterias").append(`
@@ -22,3 +51,14 @@ $(function () {
     `);
   }
 });
+
+function mostrarTiendas() {
+  for (let i = 0; i < 10; i++) {
+    $("#ferreterias__carousel").append(`
+    <div class="carouselTienda__elemento">
+    <img src="img/Banner.jpg" alt="Tiendas">
+    <p>Tienda1</p>
+    </div> 
+    `);
+  }
+}

@@ -7,6 +7,7 @@
   --gray-20: #e6ebf1;
   --gray-10: #f7f8f9;
   --fuentePrincipal: "Fredoka One", cursive;
+  --verdeOscuro:#157347;
 }
 html {
   box-sizing: border-box;
@@ -18,7 +19,7 @@ html {
 }
 
 body {
-  background-color: var(--gray-10);
+  background-color: var(--blanco);
   font-family: var(--fuentePrincipal);
 }
 /* =========================================================nav*/
@@ -32,6 +33,46 @@ body {
 }
 .offcanvas__logo {
   display: flex;
+}
+
+.carouselTienda{
+  position: relative;
+}
+.carousel__anterior{
+  left: -20px;
+}
+.carousel__siguiente{
+  right: 0;
+}
+.centrar{
+position: relative;
+right: 70%;
+}
+.carousel__anterior,.carousel__siguiente{
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 90px;
+  border: none;
+  top: 5%;
+  cursor: pointer;
+  line-height: 30px;
+  text-align: center;
+  background: var(--gray-10) ;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 100;
+}
+.carouselTienda__lista{
+  overflow: hidden;
+  gap: 20px;
+}
+.carouselTienda__elemento{
+  text-align: center;
+}
+.carouselTienda__elemento img{
+  width: 200px;
+  border-radius: 20px;
 }
 .juego {
   width: 100%;
@@ -137,6 +178,9 @@ body {
 .carousel-inner {
   height: 100%;
 }
+.tiendasAgro{
+  padding-top: 20px;
+}
 .tiendas {
   text-align: center;
 }
@@ -146,6 +190,9 @@ body {
   font-weight: 500;
   margin: 0 0 20px 0;
   font-family: var(--fuentePrincipal);
+}
+.tiendasAgro h1{
+  color: var(--verdeOscuro);
 }
 .offcanvas {
   padding-left: 20px;

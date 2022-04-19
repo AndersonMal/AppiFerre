@@ -31,5 +31,22 @@ $('#login').click(function(){
 });
 
 function BuscarCliente(correo,password){
-    alert('cliente encontrado');
+    const datos="correo="+correo+"&password="+password;
+    $.ajax({
+        data:datos,
+        url:"../../controlador/accion/act_login.php",
+        type:'POST',
+        success: function(data){
+            if(data==-1){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Datos incorrectos',
+                    text: 'Revise sus datos e intenete nuevamente',
+                })
+                return;
+            }else{
+                window.location="../registrotienda/registrarNegocio.php";
+            }
+        }
+    });
 }

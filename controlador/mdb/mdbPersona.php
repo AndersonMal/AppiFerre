@@ -9,3 +9,12 @@ function registrarPersona(Persona $persona){
 
     return $persona;
 }
+
+function autenticarPersona($correo, $password){
+    
+    $dao = new PersonaDAO();
+
+    $persona = $dao->autenticarPersona($correo, $password);
+
+    return $persona;
+}
