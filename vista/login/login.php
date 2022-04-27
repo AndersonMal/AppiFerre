@@ -29,13 +29,13 @@
 <body>
 	<div class="row m-0 h-100">
         <div class="col p-0 bg-custom d-flex justify-content-center align-items-center display-none">
-            <a href="../index.html" class="w-75">
+            <a href="../registrotienda/index.php" class="w-75">
                 <img src="../img/LogoWhite.svg">
             </a>
         </div>
         <div class="col p-0">
             <div class="text-header m-5 agrandar">
-                <a href="../index.php" class="aparecer">
+                <a href="../registrotienda/index.php" class="aparecer">
                     <img src="../img/LogoColor.png">
                 </a>
                 <h1>Bienvenido a AppiFerre</h1>

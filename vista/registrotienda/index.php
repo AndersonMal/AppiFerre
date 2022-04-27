@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 
 ?>
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
     <title>
         AppiFerre, tiendas Agro, ferreterias, campo,herramientas del campo
     </title>
-    <link rel="shortcut icon" href="img/LogoColor.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/LogoColor.png" type="image/x-icon" />
 
     <link rel="stylesheet" href="css/normalize.css" />
 
@@ -46,18 +46,19 @@
                 </div>
 
                 <div>
-                    
+                <!-- <button>Carrito</button> -->
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
+                
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
-                    <?php if($_SESSION['NOMBRE_USUARIO']) include('../recursos/menuLogin.php');
+                    <?php if(isset($_SESSION['NOMBRE_USUARIO'])) include('../recursos/menuLogin.php');
                 
-                    else include('../recursos/menuLogut.php');?>
+                    else include('../recursos/menuLogout.php');?>
                 </div>
             </div>
         </nav>
@@ -75,13 +76,13 @@
         <div class="contenidohero"></div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="img/ferrer.jpg" class="d-block w-100" alt="promociones" />
+                <img src="../img/ferrer.jpg" class="d-block w-100" alt="promociones" />
             </div>
             <div class="carousel-item">
-                <img src="img/ferrer.jpg" class="d-block w-100" alt="promociones" />
+                <img src="../img/ferrer.jpg" class="d-block w-100" alt="promociones" />
             </div>
             <div class="carousel-item">
-                <img src="img/ferrer.jpg" class="d-block w-100" alt="promociones" />
+                <img src="../img/ferrer.jpg" class="d-block w-100" alt="promociones" />
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"

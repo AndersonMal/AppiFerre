@@ -1,3 +1,3 @@
 <?php
 session_start();
-header('Location: vista/index.php');
+header('Location: vista/registrotienda/index.php');

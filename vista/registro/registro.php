@@ -29,12 +29,12 @@
 <body>
 	<div class="row m-0 h-100">
         <div class="col p-0 bg-custom d-flex justify-content-center align-items-center display-none">
-            <a href="../index.php" class="w-75">
+            <a href="../registrotienda/index.php" class="w-75">
                 <img src="../img/LogoWhite.svg">
             </a>         
         </div>
         <div class="col p-0">
-            <a href="../index.html" class="aparecer">
+            <a href="../registrotienda/index.php" class="aparecer">
                 <img src="../img/LogoColor.png">
             </a>
             <div class="text-header m-5 agrandar">

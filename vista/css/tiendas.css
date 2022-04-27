@@ -244,6 +244,9 @@ div.tienda {
     display: none;
   }
 }
+.h{
+  margin-bottom: 100px;
+}
 @media (max-width: 634px) {
   .tiendas__grid {
     grid-template-columns: repeat(2, 1fr);
