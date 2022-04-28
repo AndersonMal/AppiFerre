@@ -41,7 +41,65 @@
 
     <!-- Scrollable modal -->
 <main>
-    <!-- Button trigger modal -->
+  <div class="container-fluid">
+    <div class="justify-content-center row">
+    <table class="table" id="usuariosRegistrados">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+            
+      </tbody>
+    </table>
+    </div>   
+  </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalEditarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalEditarLabel">Editar usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="../controlador/accion/act_editarUsuario.php" method="post">
+      <div class="modal-body">
+            <div class="container-fluid">
+                <div style="padding:7px 0;" class="justify-content-center row">
+                <div class="col-md-8"><input placeholder="Nombre" type="text" class="form-control" name="nombre"></div>
+                </div>
+                <div style="padding:7px 0;" class="justify-content-center row">
+                <div class="col-md-8"><input placeholder="Correo" type="email" class="form-control" name="correo"></div>
+                </div>
+                <div style="padding:7px 0;" class="justify-content-center row">
+                <div class="col-md-8"><input placeholder="Apellido" type="text" class="form-control" name="apellido"></div>
+                </div>
+                <input hidden type="number" class="form-control" name="idUsuario">
+                <div class="justify-content-center row">
+                    <button type="button" class="mr-4 btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+       
+
+      </div>
+     
+      </form>
+    </div>
+  </div>
+</div>
+<!-- end modal -->
+  
+
+  <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     Launch static backdrop modal
   </button>
