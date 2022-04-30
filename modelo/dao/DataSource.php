@@ -11,7 +11,7 @@ class DataSource {
 
             $this->cadenaConexion="mysql:host=localhost;dbname=appiferre;charset=utf8";
 
-            $this->conexion= new PDO($this->cadenaConexion,'root','root');
+            $this->conexion= new PDO($this->cadenaConexion,'root','RUTH');
 
         } catch (PDOException $ex){
 

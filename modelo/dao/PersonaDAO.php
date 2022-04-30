@@ -62,6 +62,36 @@ class PersonaDAO {
         return $persona;
     }
 
+    public function verpersona(){
+
+        $data_source = new DataSource();
+
+        $data_table= $data_source->ejecutarConsulta("SELECT * FROM personas", NULL);
+        $persona=null
+        $personas=array();
+
+        foreach($data_table as $indice => $valor){
+            $persona = new Persona(
+                $data_table[$indice]["idpersonas"],
+                $data_table[$indice]["nombre"],
+                $data_table[$indice]["apellido"],
+                $data_table[$indice]["correo"],
+                $data_table[$indice]["password"],
+                $data_table[$indice]["imagen"],
+                $data_table[$indice]["fecharegistro"]
+                    );
+            array_push($personas,$persona);
+        }
+        
+    return $personas;
+    }
+    public function verPersonaPorId($id){
+
+
+
+
+    }
+
 
 
 
