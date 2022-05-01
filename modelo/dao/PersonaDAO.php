@@ -56,6 +56,7 @@ class PersonaDAO {
                         $data_table[$indice]["imagen"],
                         $data_table[$indice]["fecharegistro"]
                         
+                        
                         );
             }
         }
